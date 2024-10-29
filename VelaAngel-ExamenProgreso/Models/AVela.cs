@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Routing.Constraints;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VelaAngel_ExamenProgreso.Models
 {
     public class AVela
     {
-        [Required]
+        [ForeignKey("Celular")]
         public int Id { get; set; }
         [MaxLength(100)]
         public string Nombre { get; set; }

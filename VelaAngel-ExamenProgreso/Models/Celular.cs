@@ -4,6 +4,7 @@ namespace VelaAngel_ExamenProgreso.Models
 {
     public class Celular
     {
+        [Key]
         [Required]
         public int Id { get; set; }
         [MaxLength(100)]
