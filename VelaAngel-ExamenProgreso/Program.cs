@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using VelaAngel_ExamenProgreso.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<VelaAngel_ExamenProgresoContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("VelaAngel_ExamenProgresoContext") ?? throw new InvalidOperationException("Connection string 'VelaAngel_ExamenProgresoContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
