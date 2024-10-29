@@ -10,11 +10,13 @@ namespace VelaAngel_ExamenProgreso.Models
         [ForeignKey("Celular")]
         public int Id { get; set; }
         [MaxLength(100)]
-        public string Nombre { get; set; }
+        public required string Nombre { get; set; }
         [Range(0, 5)]
         public float Altura { get; set; }
         [DisplayName("Hincha de LDU?")]
         public bool Hincha { get; set; }
         public DateTime Nacimiento { get; set; }
+        public Celular Celular { get; set; }
+        public int IdCelular { get; set; }
     }
 }
